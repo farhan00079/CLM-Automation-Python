@@ -62,7 +62,7 @@ st.subheader("Featured Products")
 p1, p2, p3 = st.columns(3)
 
 with p1:
-    st.image("https://via.placeholder.com/200")
+    st.image( "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9")
     st.markdown("**Smartphone**")
     st.write("₹14,999")
     st.button("Add to Cart", key="cart1")
