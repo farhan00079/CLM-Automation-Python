@@ -6,7 +6,7 @@ if "logged_in" not in st.session_state or not st.session_state.logged_in:
 
 st.set_page_config(page_title="MyKart | Home", layout="wide")
 
-# ================= NAVBAR (STREAMLIT SAFE) =================
+# ================= NAVBAR =================
 nav1, nav2, nav3 = st.columns([2, 4, 2])
 
 with nav1:
@@ -24,11 +24,20 @@ with nav3:
 
 st.divider()
 
-# ================= MENU BAR =================
+# ================= MENU BAR (WORKING BUTTONS) =================
 menu1, menu2, menu3 = st.columns(3)
-menu1.markdown("**About**")
-menu2.markdown("**Shopping**")
-menu3.markdown("**Contact Us**")
+
+with menu1:
+    if st.button("About", key="about_btn"):
+        st.switch_page("pages/2_About.py")
+
+with menu2:
+    if st.button("Shopping", key="shopping_btn"):
+        st.switch_page("pages/3_Shopping.py")
+
+with menu3:
+    if st.button("Contact Us", key="contact_btn"):
+        st.switch_page("pages/4_Contact.py")
 
 st.divider()
 
@@ -39,10 +48,11 @@ st.info("Up to **70% OFF** on Mobiles, Fashion & Electronics")
 # ================= CATEGORIES =================
 st.subheader("Top Categories")
 c1, c2, c3, c4 = st.columns(4)
-c1.button("📱 Mobiles")
-c2.button("💻 Laptops")
-c3.button("👕 Fashion")
-c4.button("🎧 Electronics")
+
+c1.button("📱 Mobiles", key="cat1")
+c2.button("💻 Laptops", key="cat2")
+c3.button("👕 Fashion", key="cat3")
+c4.button("🎧 Electronics", key="cat4")
 
 st.divider()
 
@@ -72,6 +82,6 @@ with p3:
 st.divider()
 
 # ================= LOGOUT =================
-if st.button("Logout"):
+if st.button("Logout", key="logout_btn"):
     st.session_state.logged_in = False
     st.switch_page("app.py")
