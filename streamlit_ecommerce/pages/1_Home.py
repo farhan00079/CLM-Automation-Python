@@ -33,7 +33,7 @@ with menu1:
 
 with menu2:
     if st.button("Shopping", key="shopping_btn"):
-        st.switch_page("pages/3_Shopping.py")
+        st.switch_page("pages/3_Shop.py")
 
 with menu3:
     if st.button("Contact Us", key="contact_btn"):
