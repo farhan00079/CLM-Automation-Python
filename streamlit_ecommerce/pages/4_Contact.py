@@ -11,8 +11,11 @@ st.text_input("Your Name")
 st.text_input("Email")
 st.text_area("Message")
 
+st.text_input("Your age")
+
 if st.button("Send Message"):
     st.success("Message sent successfully ✅")
+    # st.error("Message not sent")
 
 if st.button("⬅ Back to Home"):
     st.switch_page("pages/1_Home.py")
